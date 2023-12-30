@@ -2,7 +2,7 @@
 
 ## Overview
 
-See https://en.wikipedia.org/wiki/Postage_stamp_problem
+This math paper provides a calculation method to the stamp folding problem.
 
 ## The paper
 
