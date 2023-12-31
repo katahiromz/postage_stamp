@@ -17,11 +17,10 @@ bool is_crossing(const stamps_t& stamps)
     {
         for (size_t j = i + 2; j < n1; j += 2)
         {
-            edge_t x1 = { i, i + 1 }, x2 = { j, j + 1 };
-            size_t m1 = std::min(stamps[x1.first], stamps[x1.second]);
-            size_t m2 = std::min(stamps[x2.first], stamps[x2.second]);
-            size_t m3 = std::max(stamps[x1.first], stamps[x1.second]);
-            size_t m4 = std::max(stamps[x2.first], stamps[x2.second]);
+            size_t m1 = std::min(stamps[i], stamps[i + 1]);
+            size_t m2 = std::min(stamps[j], stamps[j + 1]);
+            size_t m3 = std::max(stamps[i], stamps[i + 1]);
+            size_t m4 = std::max(stamps[j], stamps[j + 1]);
             if (m1 < m2 && m2 < m3 && m3 < m4)
                 return true;
             if (m2 < m1 && m1 < m4 && m4 < m3)
@@ -56,7 +55,7 @@ size_t postal_stamp(size_t n)
 
 int main(void)
 {
-    for (size_t i = 1; i <= 10; ++i)
+    for (size_t i = 1; i <= 15; ++i)
     {
         size_t number = postal_stamp(i);
         std::printf("postal_stamp(%d) = %d\n", (int)i, (int)number);
