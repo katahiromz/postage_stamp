@@ -7,19 +7,6 @@
 typedef std::vector<size_t> stamps_t;
 typedef std::pair<size_t, size_t> edge_t;
 
-void print_stamps(const stamps_t& stamps)
-{
-    std::printf("stamps: ");
-    for (size_t i = 0; i < stamps.size(); ++i)
-    {
-        if (i == 0)
-            std::printf("%d", (int)stamps[i]);
-        else
-            std::printf(", %d", (int)stamps[i]);
-    }
-    std::printf("\n");
-}
-
 bool is_crossing(const stamps_t& stamps)
 {
     assert(stamps.size() > 0);
