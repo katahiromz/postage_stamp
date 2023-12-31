@@ -1,4 +1,4 @@
-# Constructive Calculation Method for Postage Stamp Problem
+# Constructive Calculation Method for Stamp Folding Problem
 
 ## Overview
 
