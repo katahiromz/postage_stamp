@@ -11,12 +11,13 @@ bool is_crossing(const stamps_t& stamps)
 {
     assert(stamps.size() > 0);
 
-    for (size_t i = 1; i < stamps.size() - 1; i += 2)
+    const size_t n1 = stamps.size() - 1;
+
+    for (size_t i = 1; i < n1; i += 2)
     {
-        for (size_t j = i + 2; j < stamps.size() - 1; j += 2)
+        for (size_t j = i + 2; j < n1; j += 2)
         {
-            edge_t x1 = { i, i + 1 };
-            edge_t x2 = { j, j + 1 };
+            edge_t x1 = { i, i + 1 }, x2 = { j, j + 1 };
             size_t m1 = std::min(stamps[x1.first], stamps[x1.second]);
             size_t m2 = std::min(stamps[x2.first], stamps[x2.second]);
             size_t m3 = std::max(stamps[x1.first], stamps[x1.second]);
@@ -32,12 +33,11 @@ bool is_crossing(const stamps_t& stamps)
         }
     }
 
-    for (size_t i = 0; i < stamps.size() - 1; i += 2)
+    for (size_t i = 0; i < n1; i += 2)
     {
-        for (size_t j = i + 2; j < stamps.size() - 1; j += 2)
+        for (size_t j = i + 2; j < n1; j += 2)
         {
-            edge_t x1 = { i, i + 1 };
-            edge_t x2 = { j, j + 1 };
+            edge_t x1 = { i, i + 1 }, x2 = { j, j + 1 };
             size_t m1 = std::min(stamps[x1.first], stamps[x1.second]);
             size_t m2 = std::min(stamps[x2.first], stamps[x2.second]);
             size_t m3 = std::max(stamps[x1.first], stamps[x1.second]);
