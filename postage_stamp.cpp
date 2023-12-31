@@ -62,7 +62,7 @@ size_t postal_stamp(size_t n)
     do
     {
         if (stamps[0] != 0)
-            continue;
+            break;
         if (is_crossing(stamps))
             continue;
         ++count;
